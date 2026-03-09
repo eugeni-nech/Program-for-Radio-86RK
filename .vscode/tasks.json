@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-i8080",
+            "type": "shell",
+            "command": "D:/RK_programmers/TelemarkASM.ver.3.2.English/TASM.EXE",
+            "args": ["-85", "-b", "-s", "${file}"],
+            "group": { "kind": "build" },
+            "problemMatcher": {
+                "owner": "tasm",
+                "fileLocation": ["absolute"],
+                "pattern": {
+                    "regexp": "^(.*)\\s+line\\s+(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "message": 3
+                }
+            }
+        },
+        {
+            "label": "obj-to-rkr",
+            "type": "shell",
+            "command": "${workspaceFolder}/build_rkr.cmd",
+            "args": ["${file}", "${fileBasenameNoExtension}", "${fileDirname}"],
+            "problemMatcher": [],
+            "options": { "cwd": "${fileDirname}" },
+            "presentation": { "echo": true, "reveal": "always" }
+        },
+        {
+            "label": "full-build-and-upload",
+            "dependsOrder": "sequence",
+            "dependsOn": ["build-i8080", "obj-to-rkr"],
+            "group": { "kind": "build", "isDefault": true }
+        }
+    ]
+}

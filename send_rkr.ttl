@@ -1,0 +1,17 @@
+; Настройка порта (измените параметры, если нужно)
+; 4800 бод, N-8-1
+; setbaud 12
+
+connect '/C=10'
+; Ждем 2 секунды, чтобы порт открылся
+pause 2
+; Отправляем файл через XMODEM
+; /C — CRC (стандарт для большинства загрузчиков)
+; /Q — тихий режим
+;xmodemrecv 'D:\RK_programmers\TestMon\PACMAN.RKR' 1 1
+
+xmodemrecv param2 1 2
+
+; Закрываем Tera Term после отправки
+
+closett
