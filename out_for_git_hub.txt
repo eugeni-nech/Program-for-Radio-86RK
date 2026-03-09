@@ -1,0 +1,51 @@
+PS D:\temp\111> git init
+Reinitialized existing Git repository in D:/Temp/111/.git/
+PS D:\temp\111> git add README.md
+fatal: pathspec 'README.md' did not match any files
+PS D:\temp\111> git add README.md
+PS D:\temp\111> git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'nick@HomeEVN.(none)')
+PS D:\temp\111> git config --global user.email "eugeni.nech@gmail.com"
+PS D:\temp\111> git config --global user.name "Eugeni"
+PS D:\temp\111> git commit -m "first commit"
+[main (root-commit) 102d8a6] first commit
+ 13 files changed, 374 insertions(+)
+ create mode 100644 .vscode/tasks.json
+ create mode 100644 README.md
+ create mode 100644 TASM85.TAB
+ create mode 100644 bin2tape.exe
+ create mode 100644 build_rkr.cmd
+ create mode 100644 build_rkr.cmd.bak
+ create mode 100644 program.asm
+ create mode 100644 program.lst
+ create mode 100644 program.obj
+ create mode 100644 program.rkr
+ create mode 100644 program.sym
+ create mode 100644 send_rkr.cmd
+ create mode 100644 send_rkr.ttl
+PS D:\temp\111> git branch -M main
+PS D:\temp\111> git remote add origin https://github.com/eugeni-nech/Program-for-Radio-86RK.git
+PS D:\temp\111> git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 56 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (16/16), 323.79 KiB | 5.68 MiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/eugeni-nech/Program-for-Radio-86RK.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
